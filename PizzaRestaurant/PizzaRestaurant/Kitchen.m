@@ -14,7 +14,7 @@
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings
 {
     Pizza *p = [[Pizza alloc] initPizzaWithSize:size andToppings:toppings];
-    NSLog(@"size: %ld, topping: %@", (long)size, toppings);
+    NSLog(@" topping: %@", toppings);
     return p;
 }
 

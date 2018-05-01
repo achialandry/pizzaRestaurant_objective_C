@@ -11,7 +11,7 @@
 @interface Pizza : NSObject
 //enum for the pizza sizes
 typedef NS_ENUM(NSInteger, PizzaSize) {
-    small,
+    small=0,
     medium,
     large
 };

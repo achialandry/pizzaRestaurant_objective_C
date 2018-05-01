@@ -29,7 +29,7 @@
     NSArray *meatLoverToppings = @[@"meat", @"cheese", @"mushrooms", @"pinneaples"];
     
     Pizza *pizza  = [[Pizza alloc] initPizzaWithSize:size andToppings:meatLoverToppings];
-    NSLog(@"Size: %ld, Topings: %@", (long)size, meatLoverToppings);
+    NSLog(@"Topings: %@",  meatLoverToppings);
     return pizza;
 }
 

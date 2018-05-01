@@ -32,15 +32,18 @@ int main(int argc, const char * argv[]) {
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
             NSMutableArray *commandMutableArray = [commandWords mutableCopy];
             NSString *pizzaSize = commandWords[0];
+            NSString *meat = @"meat";
             [commandMutableArray removeObjectAtIndex:0];
             PizzaSize size = [Pizza pizzaSize:pizzaSize];
             
             
             if ([pizzaSize isEqualToString:@"pepperonni"]) {
                 [restaurantKitchen makelargePepperoni];
-            }else if ([pizzaSize isEqualToString:@"meat"]){
+            }else if ([commandMutableArray containsObject:meat]){
+                NSLog(@"Size: %@", pizzaSize);
                 [restaurantKitchen meatLoverWithSize:size];
             }else{
+                NSLog(@"Size: %@", pizzaSize);
                 [restaurantKitchen makePizzaWithSize:size toppings:commandMutableArray];
             }
             
