@@ -28,9 +28,22 @@ int main(int argc, const char * argv[]) {
             NSLog(@"Input was %@", inputString);
             
             // Take the first word of the command as the size, and the rest as the toppings
-            NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
             
-            // And then send some message to the kitchen...
+            NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
+            NSMutableArray *commandMutableArray = [commandWords mutableCopy];
+            NSString *pizzaSize = commandWords[0];
+            [commandMutableArray removeObjectAtIndex:0];
+            PizzaSize size = [Pizza pizzaSize:pizzaSize];
+            
+            
+            if ([pizzaSize isEqualToString:@"pepperonni"]) {
+                [restaurantKitchen makelargePepperoni];
+            }else if ([pizzaSize isEqualToString:@"meat"]){
+                [restaurantKitchen meatLoverWithSize:size];
+            }else{
+                [restaurantKitchen makePizzaWithSize:size toppings:commandMutableArray];
+            }
+            
         }
         
     
