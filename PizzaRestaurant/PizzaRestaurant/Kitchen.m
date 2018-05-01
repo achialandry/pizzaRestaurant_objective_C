@@ -13,7 +13,21 @@
 
 - (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings
 {
-    Pizza *p = [[Pizza alloc] initPizzaWithSize:size andToppings:toppings];
+    Pizza *p;
+    //checking if delegate is set
+    if (self.delegate) {
+        if ([self.delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
+            if ([self.delegate kitchenShouldUpgradeOrder:self]) {
+                p = [[Pizza alloc] initPizzaWithSize:large andToppings:toppings];
+            }else{
+                p = [[Pizza alloc] initPizzaWithSize:size andToppings:toppings];
+            }
+            if ([self.delegate respondsToSelector:@selector(kitchenDidMakePizza:)] ) {
+                [self.delegate kitchenDidMakePizza:p];
+            }
+        }
+    }
+    
     NSLog(@" topping: %@", toppings);
     return p;
 }
