@@ -19,16 +19,22 @@
         if ([self.delegate kitchen:self shouldMakePizzaOfSize:size andToppings:toppings]) {
             if ([self.delegate kitchenShouldUpgradeOrder:self]) {
                 p = [[Pizza alloc] initPizzaWithSize:large andToppings:toppings];
+                NSLog(@"Kitchen make pizza with large toppings");
+                NSLog(@" topping: %@", toppings);
             }else{
                 p = [[Pizza alloc] initPizzaWithSize:size andToppings:toppings];
+                NSLog(@"Kitchen should make pizza");
+                NSLog(@" topping: %@", toppings);
             }
             if ([self.delegate respondsToSelector:@selector(kitchenDidMakePizza:)] ) {
                 [self.delegate kitchenDidMakePizza:p];
+                NSLog(@"Kitchen did make pizza");
+                NSLog(@" topping: %@", toppings);
             }
         }
     }
     
-    NSLog(@" topping: %@", toppings);
+    
     return p;
 }
 
