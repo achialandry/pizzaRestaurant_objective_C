@@ -17,7 +17,7 @@
         NSLog(@"Sorry we can't make any pizza");
         return NO;
     }else{
-        [kitchen makePizzaWithSize:size toppings:toppings];
+        //[kitchen makePizzaWithSize:size toppings:toppings];
         return YES;	
     }
 }

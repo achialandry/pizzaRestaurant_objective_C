@@ -16,11 +16,14 @@ int main(int argc, const char * argv[]) {
         
         Kitchen *restaurantKitchen = [Kitchen new];
         
+        
         //Instantiating manager one
-        ManagerOne *managerOne = [ManagerOne new];
+        ManagerOne *managerOne;
         
         //Instantiating manager two
-        ManagerTwo *managerTwo = [ManagerTwo new];
+        ManagerTwo *managerTwo;
+        
+        
         NSLog(@"\nPlease\n Type: 1 for ManagerOne\n Type: 2  for ManagerTwo \nOr\n->HIT ENTER to proceed without choosing a manager");
         
         char choice[100];
@@ -34,9 +37,15 @@ int main(int argc, const char * argv[]) {
         
         switch (userChoice) {
             case 1:
+                if (managerOne == nil) {
+                    managerOne = [ManagerOne new];
+                }
                 [restaurantKitchen setDelegate:managerOne];
                 break;
             case 2:
+                if (managerTwo == nil) {
+                    managerTwo = [ManagerTwo new];
+                }
                 [restaurantKitchen setDelegate:managerTwo];
                 break;
             default:
