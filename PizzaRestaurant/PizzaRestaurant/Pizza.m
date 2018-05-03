@@ -48,5 +48,24 @@
     return pizzaSize;
 }
 
+-(NSString *)allPizzaDetails:(PizzaSize)size toppings:(NSArray *)toppings{
+    NSString *sizeOfPizza;
+    if (size == small) {
+        sizeOfPizza = @"small";
+    }else if(size == medium){
+        sizeOfPizza = @"medium";
+    }else if (size == large){
+        sizeOfPizza = @"large";
+    }
+    
+    NSString *myToppings;
+    NSString *result;
+    
+    myToppings = [toppings componentsJoinedByString:@"  ,"];
+    
+    result = [NSString stringWithFormat:@"size: %@, topping: %@", sizeOfPizza, myToppings];
+    return result;
+}
+
 
 @end

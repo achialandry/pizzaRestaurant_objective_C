@@ -10,12 +10,24 @@
 #import "Kitchen.h"
 #import "ManagerOne.h"
 #import "ManagerTwo.h"
+#import "Manager.h"
+#import "DeliveryService.h"
+#import "DeliveryCar.h"
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSLog(@"Please pick your pizza size and toppings:");
         
         Kitchen *restaurantKitchen = [Kitchen new];
         
+        
+        //initializing Manager
+        Manager *manager;
+        
+        //initializing the Delivery Service
+        DeliveryService *deliveryService;
+        
+        //initializing the delivery car
+        DeliveryCar *deliveryCar;
         
         //Instantiating manager one
         ManagerOne *managerOne;
@@ -24,7 +36,7 @@ int main(int argc, const char * argv[]) {
         ManagerTwo *managerTwo;
         
         
-        NSLog(@"\nPlease\n Type: 1 for ManagerOne\n Type: 2  for ManagerTwo \nOr\n->HIT ENTER to proceed without choosing a manager");
+        NSLog(@"\nPlease\n Type: 1 for ManagerOne\n Type: 2  for ManagerTwo \nOr\n->Type 3 for MANAGER");
         
         char choice[100];
         fgets (choice, 100, stdin);
@@ -48,10 +60,19 @@ int main(int argc, const char * argv[]) {
                 }
                 [restaurantKitchen setDelegate:managerTwo];
                 break;
+            case 3:
+                if (manager == nil) {
+                    manager = [Manager new];
+                }
+            
+                [restaurantKitchen setDelegate:manager];
+                break;
             default:
                 break;
         }
-              
+        
+        deliveryService = [DeliveryService new];
+        deliveryCar = [DeliveryCar new];
         
         while (TRUE) {
             // Loop forever
@@ -59,6 +80,12 @@ int main(int argc, const char * argv[]) {
             NSLog(@"> ");
             char str[100];
             fgets (str, 100, stdin);
+            
+            [manager setDelegate:deliveryService];
+            
+            
+            
+            [deliveryService setDelegate:deliveryCar];
             
             NSString *inputString = [[NSString alloc] initWithUTF8String:str];
             inputString = [inputString stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
@@ -85,6 +112,15 @@ int main(int argc, const char * argv[]) {
                 NSLog(@"Size: %@", pizzaSize);
                 [restaurantKitchen makePizzaWithSize:size toppings:commandMutableArray];
             }
+            
+            
+            
+            
+            
+            
+            [deliveryService pizzaDescriptionDelivered];
+            
+            
             
         }
         

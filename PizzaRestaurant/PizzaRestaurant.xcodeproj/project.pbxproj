@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		500B913A2099BADC003A6A00 /* ManagerOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 500B91392099BADC003A6A00 /* ManagerOne.m */; };
 		500B913D209A1214003A6A00 /* ManagerTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 500B913C209A1214003A6A00 /* ManagerTwo.m */; };
+		500B9140209A876A003A6A00 /* DeliveryService.m in Sources */ = {isa = PBXBuildFile; fileRef = 500B913F209A876A003A6A00 /* DeliveryService.m */; };
+		500B9143209A877C003A6A00 /* DeliveryCar.m in Sources */ = {isa = PBXBuildFile; fileRef = 500B9142209A877C003A6A00 /* DeliveryCar.m */; };
+		500B9162209B08DB003A6A00 /* Manager.m in Sources */ = {isa = PBXBuildFile; fileRef = 500B9161209B08DB003A6A00 /* Manager.m */; };
 		5094A3002095E5FE0024134D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5094A2FF2095E5FE0024134D /* main.m */; };
 		5094A3082095E65E0024134D /* Kitchen.m in Sources */ = {isa = PBXBuildFile; fileRef = 5094A3062095E65D0024134D /* Kitchen.m */; };
 		5094A30C209718D80024134D /* Pizza.m in Sources */ = {isa = PBXBuildFile; fileRef = 5094A30B209718D80024134D /* Pizza.m */; };
@@ -31,6 +34,12 @@
 		500B91392099BADC003A6A00 /* ManagerOne.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerOne.m; sourceTree = "<group>"; };
 		500B913B209A1214003A6A00 /* ManagerTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ManagerTwo.h; sourceTree = "<group>"; };
 		500B913C209A1214003A6A00 /* ManagerTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ManagerTwo.m; sourceTree = "<group>"; };
+		500B913E209A876A003A6A00 /* DeliveryService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeliveryService.h; sourceTree = "<group>"; };
+		500B913F209A876A003A6A00 /* DeliveryService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeliveryService.m; sourceTree = "<group>"; };
+		500B9141209A877C003A6A00 /* DeliveryCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DeliveryCar.h; sourceTree = "<group>"; };
+		500B9142209A877C003A6A00 /* DeliveryCar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DeliveryCar.m; sourceTree = "<group>"; };
+		500B9160209B08DB003A6A00 /* Manager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Manager.h; sourceTree = "<group>"; };
+		500B9161209B08DB003A6A00 /* Manager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Manager.m; sourceTree = "<group>"; };
 		5094A2FC2095E5FE0024134D /* PizzaRestaurant */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = PizzaRestaurant; sourceTree = BUILT_PRODUCTS_DIR; };
 		5094A2FF2095E5FE0024134D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5094A3062095E65D0024134D /* Kitchen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Kitchen.m; sourceTree = "<group>"; };
@@ -77,9 +86,15 @@
 				5094A30A209718D80024134D /* Pizza.h */,
 				5094A30B209718D80024134D /* Pizza.m */,
 				500B91382099BADC003A6A00 /* ManagerOne.h */,
+				500B9160209B08DB003A6A00 /* Manager.h */,
+				500B9161209B08DB003A6A00 /* Manager.m */,
 				500B91392099BADC003A6A00 /* ManagerOne.m */,
 				500B913B209A1214003A6A00 /* ManagerTwo.h */,
 				500B913C209A1214003A6A00 /* ManagerTwo.m */,
+				500B913E209A876A003A6A00 /* DeliveryService.h */,
+				500B913F209A876A003A6A00 /* DeliveryService.m */,
+				500B9141209A877C003A6A00 /* DeliveryCar.h */,
+				500B9142209A877C003A6A00 /* DeliveryCar.m */,
 			);
 			path = PizzaRestaurant;
 			sourceTree = "<group>";
@@ -141,11 +156,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500B9143209A877C003A6A00 /* DeliveryCar.m in Sources */,
 				500B913A2099BADC003A6A00 /* ManagerOne.m in Sources */,
 				5094A30C209718D80024134D /* Pizza.m in Sources */,
 				5094A3082095E65E0024134D /* Kitchen.m in Sources */,
 				5094A3002095E5FE0024134D /* main.m in Sources */,
 				500B913D209A1214003A6A00 /* ManagerTwo.m in Sources */,
+				500B9140209A876A003A6A00 /* DeliveryService.m in Sources */,
+				500B9162209B08DB003A6A00 /* Manager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
